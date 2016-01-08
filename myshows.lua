@@ -79,7 +79,6 @@ end
 -- Set up a timer which marks episode as watched in 3/4 of episode duration
 -------------------------------------
 function setup_timer()
-    print(mp.get_property('duration'))
     local seconds = mp.get_property('duration')*0.75 - mp.get_property('time-pos')
     msg.debug('Episode will be marked as watched in', seconds, 'seconds')
     if seconds >= 0 then
