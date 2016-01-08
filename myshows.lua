@@ -98,7 +98,7 @@ function mark_as_watched()
     local ep_info, err = myshows_find_episode_info(filename)
     if ep_info == nil then
         msg.error('JSON parse error:', err)
-        mp.osd_message("Failed to mark episode as watched on MyShows")
+        mp.osd_message("Failed to mark episode as watched on MyShows", 1)
         return
     end
     -- Send API request to mark as watched
@@ -109,10 +109,10 @@ function mark_as_watched()
         r, c, h, s, resp = http_request(request, session_id)
         if c == 200 then
             msg.info('Episode id', eid, 'has been marked as watched')
-            mp.osd_message("Episode has been marked as watched on MyShows")
+            mp.osd_message("Episode has been marked as watched on MyShows", 1)
         else
             msg.error('Failed to mark episode. Status:', s)
-            mp.osd_message("Failed to mark episode as watched on MyShows")
+            mp.osd_message("Failed to mark episode as watched on MyShows", 1)
         end
     end
 end
