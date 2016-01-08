@@ -152,7 +152,7 @@ end
 function myshows_find_episode_info(filename)
     local request = base_url..'/shows/search/file/?q='..filename
     r, c, h, s, resp = http_request(request, nil)
-    if c == 404 then
+    if c ~= 200 then
         return nil, 'Failed to retirieve episode information ('..s..')'
     end
     -- mpv's JSON decoder implementation seems not to like such character
