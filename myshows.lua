@@ -79,7 +79,10 @@ end
 -- Set up a timer which marks episode as watched in 3/4 of episode duration
 -------------------------------------
 function setup_timer()
-    local seconds = mp.get_property('duration')*0.75 - mp.get_property('time-pos')
+    local time_pos = mp.get_property('time-pos')
+    -- mpv returns nil when playback position is at very start
+    if time_pos == nil then time_pos = 0 end
+    local seconds = mp.get_property('duration')*0.75 - time_pos
     msg.debug('Episode will be marked as watched in', seconds, 'seconds')
     if seconds >= 0 then
         timer_obj = mp.add_timeout(seconds, mark_as_watched)
