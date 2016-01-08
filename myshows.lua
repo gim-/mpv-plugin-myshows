@@ -38,6 +38,7 @@ options.read_options(config_options, "myshows")
 local base_url = 'https://api.myshows.me' -- MyShows API base URL
 local session_id = nil  -- PHP session id
 local timer_obj = nil   -- Main timer object
+local marked = false
 
 -------------------------------------
 -- On file loaded callback
@@ -45,6 +46,7 @@ local timer_obj = nil   -- Main timer object
 -------------------------------------
 function on_file_loaded(event)
     mp.observe_property("pause", "bool", on_pause_change)
+    marked = false
 end
 
 -------------------------------------
@@ -65,7 +67,7 @@ end
 -- @param value New property value (true/false)
 -------------------------------------
 function on_pause_change(property_name, value)
-    if property_name ~= 'pause' then return end
+    if property_name ~= 'pause' or marked then return end
     if value then
         if timer_obj ~= nil then timer_obj.stop() end
         msg.debug('Timer stopped')
@@ -93,6 +95,7 @@ end
 -- Mark currently whatched episode as watched on MyShows
 -------------------------------------
 function mark_as_watched()
+    marked = true
     if timer_obj ~= nil then timer_obj.stop() end
     if session_id == nil then
         session_id = myshows_auth(config_options.username, config_options.password_md5)
