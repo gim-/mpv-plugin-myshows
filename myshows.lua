@@ -83,9 +83,9 @@ function setup_timer()
     -- mpv returns nil when playback position is at very start
     if time_pos == nil then time_pos = 0 end
     local seconds = mp.get_property('duration')*0.75 - time_pos
-    msg.debug('Episode will be marked as watched in', seconds, 'seconds')
     if seconds >= 0 then
         timer_obj = mp.add_timeout(seconds, mark_as_watched)
+        msg.debug('Episode will be marked as watched in', seconds, 'seconds')
     end
 end
 
