@@ -92,7 +92,7 @@ end
 -------------------------------------
 function mark_as_watched()
     if session_id == nil then
-        session_id = myshows_auth(username, password)
+        session_id = myshows_auth(config_options.username, config_options.password_md5)
     end
     local filename = mp.get_property('filename')
     local ep_info, err = myshows_find_episode_info(filename)
