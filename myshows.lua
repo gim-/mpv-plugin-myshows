@@ -90,6 +90,7 @@ end
 -- Mark currently whatched episode as watched on MyShows
 -------------------------------------
 function mark_as_watched()
+    if timer_obj ~= nil then timer_obj.stop() end
     if session_id == nil then
         session_id = myshows_auth(config_options.username, config_options.password_md5)
     end
