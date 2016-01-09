@@ -183,6 +183,7 @@ function http_request(url, session_id)
     if session_id ~= nil then
         cookie = 'PHPSESSID='..session_id..';'
     end
+    mp.resume_all() -- Avoid playback lock
     local client, code, headers, status = http.request{
         url=url,
         sink=ltn12.sink.table(resp),

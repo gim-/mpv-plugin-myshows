@@ -38,8 +38,7 @@ echo 'B script_binding myshows_mark' >> ~/.config/mpv/input.conf
 
 # Known issues
 
-* HTTP requests currerntly are sent in the main thread, which seems to cause brief video stuttering when episode is being marked.
-* MyShows API in some cases can't find episode information based on even very discriptive file name, which results in episode not being marked. Currently I'm working on it. Possible solution might be to combine MyShows and TheTvDb.com API calls.
+* MyShows API in some cases can't find episode information based on even very discriptive file name, which results in episode not being marked. Currently I'm working on it.
 
 # Disclaimer
 
