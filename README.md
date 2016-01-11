@@ -1,6 +1,6 @@
 # MyShows episode mark as watched
 
-This user script will autocatically find out which TV show and episode you're watching right now and mark it as watched on [MyShows](myshows.me) when you've watched 3/4 of the video file duration. You can also mark it manually by pressing a hotkey.
+This user script will automatically find out which TV show and episode you're watching right now and mark it as watched on [MyShows](myshows.me) when you've watched 3/4 of the video file duration. You can also mark it manually by pressing a hotkey.
 
 # Installation
 
@@ -30,7 +30,7 @@ That's it, you're good to go.
 
 Episode marking should be done automatically after you watch 3/4 of the video file duration. Though you can do it manually too by pressing 'myshows_mark' (default: W (capital w!)) hotkey. If you want to change hotkey to something else you can do this by adding `KEYNAME script_binding myshows_mark` in to your `input.conf`.
 
-For example, if you want to change it to B (capital b):
+For example, if you want to set it to B (capital b):
 ```Bash
 mkdir -p ~/.config/mpv/
 echo 'B script_binding myshows_mark' >> ~/.config/mpv/input.conf
@@ -38,7 +38,7 @@ echo 'B script_binding myshows_mark' >> ~/.config/mpv/input.conf
 
 # Known issues
 
-* MyShows API in some cases can't find episode information based on even very discriptive file name, which results in episode not being marked. Currently I'm working on it.
+* MyShows API in some cases can't find episode information based on even very descriptive file name, which results in episode not being marked. Currently I'm working on it.
 
 # Disclaimer
 
