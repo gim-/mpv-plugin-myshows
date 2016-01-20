@@ -4,6 +4,15 @@ This user script will automatically find out which TV show and episode you're wa
 
 # Installation
 
+## Automatically
+
+Download the `install.sh` shell script and launch it.
+```Bash
+wget https://raw.githubusercontent.com/gim-/mpv-plugin-myshows/master/install.sh
+sh install.sh
+```
+It will automatically download the user script and then ask you for your MyShows credentials. After you get the message `MyShows credentials have been saved` you're good to go.
+
 ## Manually
 
 Download and put the `myshows.lua` file in your scripts configuration subdirectory (usually `~/.config/mpv/scripts/`).
