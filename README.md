@@ -1,6 +1,6 @@
 # MyShows episode mark as watched
 
-This user script will automatically find out which TV show and episode you're watching right now and mark it as watched on [MyShows](myshows.me) when you've watched 3/4 of the video file duration. You can also mark it manually by pressing a hotkey.
+This user script will automatically find out which TV show and episode you're watching right now and mark it as watched on [MyShows](https://myshows.me) when you've watched 3/4 of the video file duration. You can also mark it manually by pressing a hotkey.
 
 # Installation
 
