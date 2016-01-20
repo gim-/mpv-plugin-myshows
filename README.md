@@ -17,7 +17,7 @@ Then create a configuration file named `myshows.conf` in your Lua settings confi
 mkdir -p ~/.config/mpv/lua-settings/
 cd ~/.config/mpv/lua-settings/
 # Substitude USERNAME and PASSWORD in the following statement with your MyShows credentials.
-echo "username=USERNAME\npassword_md5=${$(echo -n 'PASSWORD' | md5sum)%  -*}" > ~/.config/mpv/lua-settings/myshows.conf
+echo -e "username=USERNAME\npassword_md5=${$(echo -n 'PASSWORD' | md5sum)%  -*}" > ~/.config/mpv/lua-settings/myshows.conf
 ```
 `myshows.conf` should look like this:
 ```
