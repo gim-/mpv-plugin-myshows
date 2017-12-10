@@ -47,8 +47,4 @@ echo 'B script_binding myshows_mark' >> ~/.config/mpv/input.conf
 
 # Known issues
 
-* MyShows API in some cases can't find episode information based on even very descriptive file name, which results in episode not being marked. Currently I'm working on it.
-
-# Disclaimer
-
-This software is provided as-is, without any warranties.
+* MyShows API in some cases can't find episode information based on even very descriptive file name, which results in episode not being marked.
