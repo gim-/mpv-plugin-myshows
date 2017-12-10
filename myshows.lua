@@ -54,10 +54,7 @@ end
 -- @param event Event data table
 -------------------------------------
 function on_file_unloaded(event)
-    if timer_obj ~= nil then
-        -- Stop currently running timer if exists
-        timer_obj.stop()
-    end
+    destroy_timer()
     mp.unobserve_property(on_pause_change)
 end
 
@@ -69,11 +66,9 @@ end
 function on_pause_change(property_name, value)
     if property_name ~= 'pause' or marked then return end
     if value then
-        if timer_obj ~= nil then timer_obj.stop() end
-        msg.debug('Timer stopped')
+        destroy_timer()
     else
         setup_timer()
-        msg.debug('Timer resumed')
     end
 end
 
@@ -81,6 +76,7 @@ end
 -- Set up a timer which marks episode as watched in 3/4 of episode duration
 -------------------------------------
 function setup_timer()
+    destroy_timer()
     local time_pos = mp.get_property('time-pos')
     -- mpv returns nil when playback position is at very start
     if time_pos == nil then time_pos = 0 end
@@ -92,11 +88,22 @@ function setup_timer()
 end
 
 -------------------------------------
+-- Stop and destroy currently running timer if exists
+-------------------------------------
+function destroy_timer()
+    if timer_obj ~= nil then
+      timer_obj:kill()
+      timer_obj = nil
+      msg.debug('Timer destroyed')
+    end
+end
+
+-------------------------------------
 -- Mark currently whatched episode as watched on MyShows
 -------------------------------------
 function mark_as_watched()
     marked = true
-    if timer_obj ~= nil then timer_obj.stop() end
+    destroy_timer()
     if session_id == nil then
         session_id = myshows_auth(config_options.username, config_options.password_md5)
     end
