@@ -2,6 +2,12 @@
 
 This user script will automatically find out which TV show and episode you're watching right now and mark it as watched on [MyShows](https://myshows.me) when you've watched 3/4 of the video file duration. You can also mark it manually by pressing a hotkey.
 
+# Dependencies
+
+This plugin uses [luasocket](https://github.com/diegonehab/luasocket). You might need to install it separately:
+* Ubuntu/Debian: `sudo apt-get install lua-socket`
+* Arch Linux: `pacman -S lua52-socket`
+
 # Installation
 
 ## Automatically
@@ -37,7 +43,7 @@ That's it, you're good to go.
 
 # Usage
 
-Episode marking should be done automatically after you watch 3/4 of the video file duration. Though you can do it manually too by pressing 'myshows_mark' (default: W (capital w!)) hotkey. If you want to change hotkey to something else you can do this by adding `KEYNAME script_binding myshows_mark` in to your `input.conf`.
+Episode marking should be done automatically after you watch 3/4 of the video file duration. Though you can do it manually too by pressing 'myshows_mark' (default: W (capital w)) hotkey. If you want to change hotkey to something else you can do this by adding `KEYNAME script_binding myshows_mark` in to your `input.conf`.
 
 For example, if you want to set it to B (capital b):
 ```Bash
