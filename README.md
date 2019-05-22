@@ -7,6 +7,7 @@ This user script will automatically find out which TV show and episode you're wa
 This plugin uses [luasocket](https://github.com/diegonehab/luasocket). You might need to install it separately:
 * Ubuntu/Debian: `sudo apt-get install lua-socket`
 * Arch Linux: `pacman -S lua52-socket`
+* Mac OS X: `sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasocket`
 
 # Installation
 
