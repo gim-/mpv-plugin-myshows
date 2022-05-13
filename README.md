@@ -4,10 +4,23 @@ This user script will automatically find out which TV show and episode you're wa
 
 # Dependencies
 
-This plugin uses [luasocket](https://github.com/diegonehab/luasocket). You might need to install it separately:
-* Ubuntu/Debian: `sudo apt-get install lua-socket`
-* Arch Linux: `pacman -S lua52-socket`
-* Mac OS X: `sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasocket`
+This plugin uses [luasocket](https://github.com/diegonehab/luasocket) and [luasec](https://github.com/brunoos/luasec). In some cases you might need to install them separately.
+
+## Ubuntu/Debian
+
+`sudo apt-get install lua-socket`
+
+## Arch Linux
+
+`pacman -S lua52-socket`
+
+## Mac OS X
+
+```bash
+sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasocket
+brew install openssl
+sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasec OPENSSL_DIR=/opt/homebrew/opt/openssl@3
+```
 
 # Installation
 
