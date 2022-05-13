@@ -193,7 +193,6 @@ function http_request(url, session_id)
     local client, code, headers, status = http.request{
         url=url,
         sink=ltn12.sink.table(resp),
-        protocol = "tlsv1",
         headers = {
             ['Cookie'] = cookie,
         },
