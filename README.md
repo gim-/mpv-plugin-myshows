@@ -50,8 +50,8 @@ echo -e "username=USERNAME\npassword_md5=${$(echo -n 'PASSWORD' | md5sum)%  -*}"
 ```
 `myshows.conf` should look like this:
 ```
-username=MyUserName
-password_md5=319f4d26e3c536b5dd871bb2c52e3178
+username=demo239
+password_md5=0f25bd0ff7b9cfd3ebbec99f55a34b61
 ```
 That's it, you're good to go.
 
