@@ -17,9 +17,9 @@ This plugin uses [luasocket](https://github.com/diegonehab/luasocket) and [luase
 ## Mac OS X
 
 ```bash
-sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasocket
+sudo luarocks --lua-version 5.1 --tree /usr/local/ install luasocket
 brew install openssl
-sudo luarocks --lua-dir=/usr/local/opt/lua@5.1 --tree /usr/local/ install luasec OPENSSL_DIR=/opt/homebrew/opt/openssl@3
+sudo luarocks --lua-version 5.1 --tree /usr/local/ install luasec OPENSSL_DIR=/opt/homebrew/opt/openssl@3
 ```
 
 # Installation
