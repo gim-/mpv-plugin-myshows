@@ -24,7 +24,20 @@ sudo luarocks --lua-version 5.1 --tree /usr/local/ install luasec OPENSSL_DIR=/o
 
 # Installation
 
-## Automatically
+## Semi-automatically using [mplug](https://github.com/Nudin/mplug)
+
+It is a plugin manager for mpv to easy install and uninstall mpv scripts.
+
+```
+pip3 install mplug
+mplug install myshows
+```
+
+Though extra manual steps are still required for this plugin:
+- Make sure required Lua dependencies are installed
+- See the the Manually section below for details on how to provide your MyShows login credentials
+
+## Automatically with the provided script
 
 Download the `install.sh` shell script and launch it.
 ```Bash
